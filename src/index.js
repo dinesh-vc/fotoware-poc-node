@@ -52,11 +52,6 @@ app.use(express.static(path.join(__dirname, '/public')));
 // CORS configuration 
 app.use(cors({ 'origin': '*' }));
 
-app.get('/check123', (req, res) => {
-    res.status(status_codes.OK).send(Response.sendResponse(status_codes.OK, "Server is good now !!!!!!", [], []));
-
-})
-
 // mount api routes
 app.use('/', routes);
 // if error is not an instanceOf APIError, convert it.

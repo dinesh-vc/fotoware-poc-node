@@ -3,7 +3,6 @@ var axios = require('axios');
 var qs = require('qs');
 import statusCode from '../../../utils/statusCode'
 import config from '../../../config/config'
-
 export default class userAuthController {
     
     static async generateToken(req, res) {
@@ -18,7 +17,7 @@ export default class userAuthController {
                 'client_secret': client_secret
             });
 
-            var config = {
+            var request = {
                 method: 'post',
                 url:`${config.fotowareUrl}/fotoweb/oauth2/token`,
                 headers: {
@@ -27,7 +26,7 @@ export default class userAuthController {
                 },
                 data: data
             };
-            axios(config)
+            axios(request)
                 .then(function (response) {
                     res.status(statusCode.OK).send(JSON.stringify(response.data));
                 })

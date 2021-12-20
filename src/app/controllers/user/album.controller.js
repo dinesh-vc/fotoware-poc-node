@@ -2,10 +2,10 @@ var axios = require('axios');
 var qs = require('qs');
 import statusCode from '../../../utils/statusCode'
 import config from '../../../config/config'
-
+import message from '../../../config/message'
 
 export default class albumController {
-
+    
     static async getAlbums(req, res) {
         try {
             var request = {
@@ -21,7 +21,15 @@ export default class albumController {
             };
             axios(request)
                 .then(function (response) {
-                    res.status(statusCode.OK).send(JSON.stringify(response.data));
+                    if(response.data.data.length>0){
+                        response.data.message=message.infoMessage.albumsDataSuccess
+                        res.status(statusCode.OK).send((response.data));
+
+                    }else{
+                        response.data.message=message.errorMessage.dataNotFound
+                        res.status(statusCode.OK).send((response.data));
+                    }
+                   
                 })
                 .catch(function (error) {
                     res.send(error);
@@ -49,7 +57,15 @@ export default class albumController {
             };
             axios(request)
                 .then(function (response) {
-                    res.status(statusCode.OK).send(JSON.stringify(response.data));
+                    if(response.data.data.length>0){
+                
+                        response.data.message=message.infoMessage.albumsDataSuccess
+                        res.status(statusCode.OK).send((response.data));
+
+                    }else{
+                        response.data.message=message.errorMessage.dataNotFound
+                        res.status(statusCode.OK).send((response.data));
+                    }
                 })
                 .catch(function (error) {
                     res.send(error);
@@ -77,7 +93,15 @@ export default class albumController {
             };
             axios(request)
                 .then(function (response) {
-                    res.status(statusCode.OK).send(JSON.stringify(response.data));
+                    if(response.data.data.length>0){
+                
+                        response.data.message=message.infoMessage.albumsDataSuccess
+                        res.status(statusCode.OK).send((response.data));
+
+                    }else{
+                        response.data.message=message.errorMessage.dataNotFound
+                        res.status(statusCode.OK).send((response.data));
+                    }
                 })
                 .catch(function (error) {
                     res.send(error);
@@ -105,7 +129,15 @@ export default class albumController {
             };
             axios(request)
                 .then(function (response) {
-                    res.status(statusCode.OK).send(JSON.stringify(response.data));
+                    if(response.data.data.length>0){
+                
+                        response.data.message=message.infoMessage.albumsDataSuccess
+                        res.status(statusCode.OK).send((response.data));
+
+                    }else{
+                        response.data.message=message.errorMessage.dataNotFound
+                        res.status(statusCode.OK).send((response.data));
+                    }
                 })
                 .catch(function (error) {
                     res.send(error);
@@ -133,7 +165,15 @@ export default class albumController {
             };
             axios(request)
                 .then(function (response) {
-                    res.status(statusCode.OK).send(JSON.stringify(response.data));
+                    if(response.data.data.length>0){
+                
+                        response.data.message=message.infoMessage.albumsDataSuccess
+                        res.status(statusCode.OK).send((response.data));
+
+                    }else{
+                        response.data.message=message.errorMessage.dataNotFound
+                        res.status(statusCode.OK).send((response.data));
+                    }
                 })
                 .catch(function (error) {
                     res.send(error);
@@ -159,7 +199,15 @@ export default class albumController {
             };
             axios(request)
                 .then(function (response) {
-                    res.status(statusCode.OK).send(JSON.stringify(response.data));
+                    if(response.data.data.length>0){
+                
+                        response.data.message=message.infoMessage.albumsDataSuccess
+                        res.status(statusCode.OK).send((response.data));
+
+                    }else{
+                        response.data.message=message.errorMessage.dataNotFound
+                        res.status(statusCode.OK).send((response.data));
+                    }
                 })
                 .catch(function (error) {
                     res.send(error);

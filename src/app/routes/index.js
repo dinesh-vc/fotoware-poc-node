@@ -10,6 +10,6 @@ const router = Router();
 router.use('/fotoweb', authRoute);
 router.use('/fotoweb/me/albums', albumRoute);
 router.use('/fotoweb', albumSharingRoute);
-router.use('/fotoweb/archives', archiveRoute);
+router.use('/fotoweb', archiveRoute);
 router.use('/fotoweb', metadataRoute);
 module.exports = router;
